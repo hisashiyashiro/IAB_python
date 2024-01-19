@@ -1,6 +1,6 @@
 import mod_precision as mp
 import mod_misc as mm
-import dyn_divdamp.problem_size as ps 
+import problem_size as ps 
 import numpy as np
 
 ####### might have an issue with loop index (should start from 0)#######
