@@ -81,12 +81,14 @@ data = data[size_pl2:]
 def print_res(arr, name):
     print(name, 'max=', np.max(arr), ', min=', np.min(arr), ', sum=', np.sum(arr))
 
+start = timer()
 for iteration in range(ps.SET_iteration):
     print('in')
     q_a[:,:,:,:] = q_a_prev [:,:,:,:]
     q_a_pl[:,:,:] = q_a_prev_pl [:,:,:]
     mst.horizontal_limiter_thuburn(q_a, q_a_pl, q, q_pl, d, d_pl, ch, ch_pl, cmask, cmask_pl,
                                    Qout_prev, Qout_prev_pl, Qout_post, Qout_post_pl)
+end = timer()
 
 # print_res(check_q_a, 'check_q_a')
 # print_res(check_q_a_pl, 'check_q_a_pl')
@@ -127,3 +129,5 @@ print_res(res2, "check_q_a_pl")
 
 print_res(res3, "check_Qout_prev")
 print_res(res4, "check_Qout_prev_pl")
+
+print('Elapsed time=', round(end - start, 2), 'sec')
