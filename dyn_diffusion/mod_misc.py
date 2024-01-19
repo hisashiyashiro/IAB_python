@@ -1,4 +1,4 @@
-import dyn_divdamp.problem_size as ps
+import problem_size as ps
 import mod_precision as mp
 
 #++ Public parameters & variables
